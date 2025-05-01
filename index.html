@@ -1,0 +1,802 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baxter Agentics | AI Solutions for the Future Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#7C3AED',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                        accent: '#10B981',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #10B981 100%);
+            background-size: 200% 200%;
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .ai-chip {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .animated-gradient-border {
+            position: relative;
+            border-radius: 0.75rem;
+        }
+
+            .animated-gradient-border::before {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                z-index: -1;
+                background: linear-gradient(45deg, #2563EB, #7C3AED, #10B981, #2563EB);
+                background-size: 400% 400%;
+                border-radius: 0.75rem;
+                opacity: 0.8;
+                animation: gradient 8s ease infinite;
+            }
+    </style>
+</head>
+<body class="bg-dark text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-dark/90 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">Baxter Agentics</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#subsidiaries" class="text-gray-300 hover:text-white px-3 py-2 font-medium transition">Our Companies</a>
+                    <a href="#technology" class="text-gray-300 hover:text-white px-3 py-2 font-medium transition">Technology</a>
+                    <a href="#case-studies" class="text-gray-300 hover:text-white px-3 py-2 font-medium transition">Case Studies</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-md font-medium hover:bg-opacity-90 transition">Contact Us</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-lg border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                <a href="#subsidiaries" class="block px-3 py-2 text-gray-300 hover:text-white font-medium transition">Our Companies</a>
+                <a href="#technology" class="block px-3 py-2 text-gray-300 hover:text-white font-medium transition">Technology</a>
+                <a href="#case-studies" class="block px-3 py-2 text-gray-300 hover:text-white font-medium transition">Case Studies</a>
+                <a href="#contact" class="block w-full text-center bg-primary text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition mt-2">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-pattern pt-28 pb-20 md:pt-36 md:pb-28 animate-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <div class="inline-block ai-chip px-4 py-2 rounded-full mb-6">
+                        <span class="text-sm font-medium">AI-Powered Enterprise Solutions</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 glow-text">
+                        Autonomous Agents for <span class="text-accent">Tomorrow's</span> Business
+                    </h1>
+                    <p class="text-xl text-gray-200 mb-8 max-w-2xl">
+                        Baxter Agentics develops cutting-edge AI agents that automate complex business processes, enhance decision-making, and drive operational efficiency at scale.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-white text-dark px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition text-center">
+                            Schedule Demo
+                        </a>
+                        <a href="#subsidiaries" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:bg-opacity-10 transition text-center">
+                            Explore Our Companies
+                        </a>
+                    </div>
+                    <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white mr-2">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm">Enterprise-Grade</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white mr-2">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm">Fully Customizable</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white mr-2">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-sm">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 mt-10 md:mt-0">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-white bg-opacity-10 rounded-full filter blur-3xl"></div>
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-white bg-opacity-10 rounded-full filter blur-3xl"></div>
+                        <div class="relative bg-white/5 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-gray-700/50">
+                            <div class="flex items-center mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="ml-4 text-sm font-mono text-gray-300">agent_console.exe</div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">BA</div>
+                                        <div class="bg-gray-800 p-3 rounded-lg max-w-xs">
+                                            <p class="text-sm text-gray-200">Initializing Baxter Agentics autonomous workflow engine...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">BA</div>
+                                        <div class="bg-gray-800 p-3 rounded-lg max-w-xs">
+                                            <p class="text-sm text-gray-200">Connected to enterprise systems: CRM, ERP, Analytics</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <div class="flex items-start justify-end">
+                                        <div class="bg-primary text-white p-3 rounded-lg max-w-xs">
+                                            <p class="text-sm">Run market analysis for Q3 projections</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-900/50 p-4 rounded-lg">
+                                    <div class="flex items-start">
+                                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold mr-3">BA</div>
+                                        <div class="bg-gray-800 p-3 rounded-lg max-w-xs">
+                                            <p class="text-sm text-gray-200">Processing... Analyzing 1.2M data points across 12 systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-center">
+                                <div class="flex-1 bg-gray-900 border border-gray-700 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <div class="text-sm text-gray-400">Enter agent command...</div>
+                                </div>
+                                <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-opacity-90">
+                                    <i class="fas fa-terminal"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Subsidiaries Section -->
+    <section id="subsidiaries" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Our Network of Companies</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Baxter Agentics operates a portfolio of specialized AI companies, each focused on transforming different industries through autonomous intelligence.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Subsidiary 1 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-primary/30">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Nexus Analytics</h3>
+                    <p class="text-gray-400 mb-6">
+                        Specializing in predictive intelligence for financial markets and economic forecasting.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Finance</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Economics</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Risk Analysis</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Subsidiary 2 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-secondary/30">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary text-2xl mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automata Industries</h3>
+                    <p class="text-gray-400 mb-6">
+                        Building the next generation of industrial automation and robotic process automation solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Manufacturing</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Logistics</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">RPA</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-secondary font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Subsidiary 3 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-accent/30">
+                    <div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">NeuroMind AI</h3>
+                    <p class="text-gray-400 mb-6">
+                        Developing cognitive computing solutions for healthcare and life sciences applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Healthcare</span>
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Biotech</span>
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Neuroscience</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-accent font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Subsidiary 4 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-primary/30">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Sentinel Cybernetics</h3>
+                    <p class="text-gray-400 mb-6">
+                        Advanced AI-powered cybersecurity solutions for enterprise and government applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Security</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Threat Detection</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Compliance</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Subsidiary 5 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-secondary/30">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary text-2xl mb-6">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Urban Intelligence</h3>
+                    <p class="text-gray-400 mb-6">
+                        Smart city solutions powered by autonomous agents optimizing urban infrastructure.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Smart Cities</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">IoT</span>
+                        <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Infrastructure</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-secondary font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Subsidiary 6 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 feature-card transition duration-300 hover:border-accent/30">
+                    <div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-2xl mb-6">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Retail Dynamics</h3>
+                    <p class="text-gray-400 mb-6">
+                        Transforming retail and e-commerce through autonomous merchandising and customer intelligence.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Retail</span>
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">E-commerce</span>
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full">Personalization</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-accent font-medium hover:underline">
+                        <span>Visit Website</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-gray-900/30 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold text-white mb-6">Proprietary Agent Architecture</h2>
+                    <p class="text-gray-400 mb-8">
+                        Our Multi-Agent Reinforcement Learning (MARL) framework enables autonomous agents to collaborate, learn from each other, and continuously improve their performance.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Adaptive Learning</h4>
+                                <p class="text-gray-400">Agents evolve their strategies based on real-world outcomes and environmental changes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Enterprise Security</h4>
+                                <p class="text-gray-400">Military-grade encryption and compliance with SOC 2, GDPR, and HIPAA standards.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Distributed Processing</h4>
+                                <p class="text-gray-400">Scalable architecture that handles millions of simultaneous agent operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl"></div>
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-secondary/10 rounded-full filter blur-3xl"></div>
+                        <div class="relative bg-gray-900/50 backdrop-blur-md p-8 rounded-2xl border border-gray-700/50">
+                            <div class="flex items-center mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="ml-4 text-sm font-mono text-gray-300">agent_architecture.ai</div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="bg-gray-800/50 p-4 rounded-lg">
+                                    <div class="text-xs font-mono text-gray-400 mb-2">// Agent Network Topology</div>
+                                    <div class="flex justify-center">
+                                        <div class="relative w-64 h-64">
+                                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center">
+                                                <i class="fas fa-brain text-primary"></i>
+                                            </div>
+                                            <div class="absolute bottom-0 left-0 w-16 h-16 rounded-full bg-secondary/20 border border-secondary/50 flex items-center justify-center">
+                                                <i class="fas fa-database text-secondary"></i>
+                                            </div>
+                                            <div class="absolute bottom-0 right-0 w-16 h-16 rounded-full bg-accent/20 border border-accent/50 flex items-center justify-center">
+                                                <i class="fas fa-chart-line text-accent"></i>
+                                            </div>
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                                                <i class="fas fa-robot text-white"></i>
+                                            </div>
+                                            <div class="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-white"></div>
+                                            <div class="absolute top-1/4 right-1/4 w-4 h-4 rounded-full bg-white"></div>
+                                            <div class="absolute bottom-1/4 left-1/4 w-4 h-4 rounded-full bg-white"></div>
+                                            <div class="absolute bottom-1/4 right-1/4 w-4 h-4 rounded-full bg-white"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-800/50 p-4 rounded-lg">
+                                    <div class="text-xs font-mono text-gray-400 mb-2">// Current Agent Performance</div>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Task Completion</span>
+                                                <span>98.7%</span>
+                                            </div>
+                                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                                <div class="bg-primary h-2 rounded-full" style="width: 98.7%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Accuracy</span>
+                                                <span>95.2%</span>
+                                            </div>
+                                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                                <div class="bg-secondary h-2 rounded-full" style="width: 95.2%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between text-sm mb-1">
+                                                <span>Learning Rate</span>
+                                                <span>+12.3% MoM</span>
+                                            </div>
+                                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                                <div class="bg-accent h-2 rounded-full" style="width: 72.3%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Transformative Results</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    See how Baxter Agentics is driving measurable impact for industry leaders.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800">
+                    <div class="h-48 bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <i class="fas fa-building text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Financial Services Automation</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            Global bank reduced operational costs by 45% while improving compliance accuracy to 99.9% through our autonomous regulatory reporting agents.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Risk Analysis</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Process Automation</span>
+                            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Compliance</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                            <span>Read Case Study</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800">
+                    <div class="h-48 bg-gradient-to-r from-secondary/20 to-accent/20 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-6xl text-white opacity-30"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mr-3">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Retail Supply Chain Optimization</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            E-commerce giant increased fulfillment efficiency by 38% and reduced stockouts by 72% using our predictive inventory management agents.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Supply Chain</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Inventory</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Logistics</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-secondary font-medium hover:underline">
+                            <span>Read Case Study</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition">
+                    <span>Request Your Custom Demo</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-lg text-gray-400">Agent Uptime</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">3.5x</div>
+                    <div class="text-lg text-gray-400">ROI Average</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">92%</div>
+                    <div class="text-lg text-gray-400">Accuracy Rate</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-white mb-2">100+</div>
+                    <div class="text-lg text-gray-400">Enterprise Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg hero-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">Ready to Deploy Autonomous Agents?</h2>
+            <p class="text-xl text-gray-200 mb-8">
+                Transform your business operations with our cutting-edge AI agents. Schedule a consultation with our experts today.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="bg-white text-dark px-8 py-3 rounded-md font-bold hover:bg-opacity-90 transition">
+                    Get Started
+                </a>
+                <a href="#demo" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white hover:bg-opacity-10 transition">
+                    Watch Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl font-bold text-white mb-6">Let's Build the Future Together</h2>
+                    <p class="text-gray-400 mb-8">
+                        Whether you're looking to automate complex processes, enhance decision-making, or transform customer experiences, our team is ready to help.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Email Us</h4>
+                                <p class="text-gray-400">contact@baxteragentics.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Call Us</h4>
+                                <p class="text-gray-400">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Visit Us</h4>
+                                <p class="text-gray-400">350 AI Avenue, Tech District, San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-900/50 backdrop-blur-md p-8 rounded-xl border border-gray-800">
+                        <h3 class="text-xl font-bold text-white mb-6">Schedule a Consultation</h3>
+                        <form id="contactForm">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-gray-400 font-medium mb-2">Full Name</label>
+                                    <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-400 font-medium mb-2">Email Address</label>
+                                    <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-gray-400 font-medium mb-2">Company</label>
+                                    <input type="text" id="company" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-400 font-medium mb-2">Phone</label>
+                                    <input type="tel" id="phone" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <label for="interest" class="block text-gray-400 font-medium mb-2">What are you interested in?</label>
+                                <select id="interest" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
+                                    <option value="">Select an option</option>
+                                    <option value="predictive-analytics">Predictive Analytics</option>
+                                    <option value="process-automation">Process Automation</option>
+                                    <option value="customer-intelligence">Customer Intelligence</option>
+                                    <option value="custom-solution">Custom AI Solution</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mt-6">
+                                <label for="message" class="block text-gray-400 font-medium mb-2">How can we help?</label>
+                                <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full mt-6 bg-primary text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">Baxter Agentics</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Pioneering autonomous AI agents for the enterprise since 2025.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Our Companies</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Nexus Analytics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Automata Industries</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">NeuroMind AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sentinel Cybernetics</a></li>
+                    </ul>
+                </div>
+                <div>
+
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    2025 Baxter Agentics.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send this data to your server
+            console.log('Form submitted:', { name, email, company, phone, interest, message });
+
+            // Show success message
+            alert('Thank you for your message! Our team will get back to you within 24 hours.');
+
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
